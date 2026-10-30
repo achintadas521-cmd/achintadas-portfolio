@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#081525">
+  <meta name="description" content="Achinta Das — Facade & Estimation Professional. Aluminium systems, facade estimation, BOQ, material planning and project coordination.">
+  <title>Achinta Das | Facade & Estimation Professional</title>
+  <style>
+    :root {
+      --navy: #081525;
+      --navy-2: #10243a;
+      --navy-3: #18334e;
+      --gold: #d7b56d;
+      --gold-light: #f0d99f;
+      --ink: #152235;
+      --muted: #64748b;
+      --paper: #f6f7f9;
+      --white: #fff;
+      --line: rgba(215,181,109,.25);
+      --shadow: 0 18px 55px rgba(8,21,37,.12);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink); background: var(--paper); line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar { position: absolute; inset: 0 0 auto; z-index: 10; color: #fff; }
+    .nav { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: .08em; }
+    .brand-mark { width: 39px; height: 39px; display: grid; place-items: center; border: 1px solid var(--gold); color: var(--gold); border-radius: 12px; font-family: Georgia, serif; font-size: 21px; }
+    .brand small { display: block; font-size: 9px; letter-spacing: .22em; color: #b8c4d2; font-weight: 600; margin-top: -4px; }
+    .nav-links { display: flex; align-items: center; gap: 26px; font-size: 13px; color: #d6dfeb; }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-cta, .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border-radius: 999px; padding: 12px 20px; font-weight: 700; font-size: 13px; transition: .2s ease; }
+    .nav-cta, .btn-gold { background: var(--gold); color: var(--navy); border: 1px solid var(--gold); }
+    .nav-cta:hover, .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .menu-btn { display: none; border: 1px solid rgba(255,255,255,.3); color: white; background: transparent; border-radius: 10px; padding: 8px 11px; }
+    .hero { min-height: 720px; position: relative; overflow: hidden; color: white; background:
+      radial-gradient(circle at 78% 40%, rgba(215,181,109,.18), transparent 26%),
+      linear-gradient(115deg, #071321 0%, #0b1d31 56%, #142d45 100%); }
+    .hero:before { content: ""; position: absolute; width: 600px; height: 600px; border: 1px solid rgba(215,181,109,.16); border-radius: 50%; right: -130px; top: 110px; box-shadow: 0 0 0 42px rgba(215,181,109,.025), 0 0 0 90px rgba(215,181,109,.02); }
+    .hero:after { content: ""; position: absolute; inset: auto 0 0; height: 130px; background: linear-gradient(transparent, rgba(0,0,0,.18)); pointer-events: none; }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 50px; min-height: 720px; padding-top: 80px; position: relative; z-index: 1; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--gold-light); font-size: 11px; text-transform: uppercase; letter-spacing: .22em; font-weight: 800; }
+    .eyebrow:before { content: ""; width: 34px; height: 1px; background: var(--gold); }
+    h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; letter-spacing: -.045em; font-size: clamp(48px, 6vw, 76px); line-height: 1.04; margin: 22px 0 18px; }
+    h1 span { color: var(--gold-light); }
+    .hero-lead { max-width: 590px; color: #c5d0dd; font-size: 17px; margin: 0 0 30px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn-outline { border: 1px solid rgba(255,255,255,.35); color: white; }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold-light); transform: translateY(-2px); }
+    .hero-meta { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 48px; color: #aab8c8; font-size: 12px; }
+    .hero-meta strong { display: block; color: white; font-size: 19px; font-family: Georgia, serif; font-weight: 500; }
+    .visual-wrap { position: relative; min-height: 460px; display: grid; place-items: center; }
+    .blueprint { width: min(100%, 430px); aspect-ratio: .86; position: relative; border: 1px solid rgba(215,181,109,.42); border-radius: 220px 220px 18px 18px; padding: 17px; background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.015)); box-shadow: 0 35px 90px rgba(0,0,0,.25); transform: rotate(2deg); }
+    .blueprint-inner { height: 100%; border: 1px solid rgba(215,181,109,.28); border-radius: 205px 205px 10px 10px; position: relative; overflow: hidden; background: linear-gradient(180deg, rgba(215,181,109,.07), rgba(255,255,255,.015)); }
+    .tower { position: absolute; bottom: 0; left: 16%; width: 68%; height: 77%; border: 1px solid rgba(240,217,159,.75); background: repeating-linear-gradient(90deg, transparent 0 17%, rgba(240,217,159,.26) 17.3% 17.8%, transparent 18% 25%), repeating-linear-gradient(0deg, transparent 0 12%, rgba(240,217,159,.24) 12.3% 12.8%, transparent 13% 17%); clip-path: polygon(12% 0, 88% 0, 100% 100%, 0 100%); }
+    .tower:before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(215,181,109,.15), transparent 40%, rgba(215,181,109,.1)); }
+    .blueprint-label { position: absolute; left: 18px; bottom: 18px; color: var(--gold-light); font-size: 9px; letter-spacing: .2em; writing-mode: vertical-rl; }
+    .float-card { position: absolute; right: -10px; bottom: 45px; background: #fff; color: var(--navy); padding: 17px 20px; border-radius: 15px; box-shadow: var(--shadow); width: 190px; transform: rotate(-2deg); }
+    .float-card b { display: block; font: 25px Georgia, serif; }
+    .float-card span { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .12em; }
+    section { padding: 100px 0; }
+    .section-kicker { color: #9a783c; font-size: 11px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
+    .section-title { color: var(--navy); font: 500 clamp(34px, 4vw, 48px)/1.12 Georgia, serif; letter-spacing: -.035em; margin: 12px 0 18px; }
+    .section-intro { color: var(--muted); max-width: 650px; margin: 0; }
+    .about-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 70px; align-items: center; }
+    .about-panel { background: var(--navy); border-radius: var(--radius); padding: 34px; color: white; position: relative; overflow: hidden; min-height: 310px; }
+    .about-panel:after { content: "AD"; position: absolute; right: -7px; bottom: -60px; color: rgba(215,181,109,.09); font: 220px Georgia, serif; }
+    .about-panel .mini-line { width: 44px; height: 2px; background: var(--gold); margin: 8px 0 25px; }
+    .about-panel h3 { font: 28px Georgia, serif; margin: 0 0 12px; color: var(--gold-light); }
+    .about-panel p { color: #c1ccda; font-size: 14px; max-width: 270px; position: relative; z-index: 1; }
+    .about-copy p { color: #5d6b7c; }
+    .about-copy strong { color: var(--navy); }
+    .text-link { color: #987438; font-weight: 800; font-size: 13px; display: inline-flex; gap: 8px; margin-top: 12px; }
+    .services { background: #edf0f3; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 42px; }
+    .card { background: white; padding: 28px; border: 1px solid #e5e9ee; border-radius: 18px; min-height: 230px; transition: .25s; }
+    .card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--line); }
+    .icon-box { width: 45px; height: 45px; display: grid; place-items: center; background: #f7f1e5; color: #987438; border-radius: 13px; font-size: 20px; }
+    .card h3 { color: var(--navy); font: 22px Georgia, serif; margin: 20px 0 8px; }
+    .card p { color: var(--muted); font-size: 13px; margin: 0; }
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 42px; }
+    .skill-group h3 { font: 22px Georgia, serif; color: var(--navy); margin: 0 0 18px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+    .chip { border: 1px solid #dce2e8; background: white; color: #34465a; border-radius: 999px; padding: 9px 14px; font-size: 12px; font-weight: 650; }
+    .experience { background: var(--navy); color: white; }
+    .experience .section-title { color: white; }
+    .experience .section-intro { color: #b8c5d4; }
+    .timeline { margin-top: 42px; border-left: 1px solid rgba(215,181,109,.5); padding-left: 28px; max-width: 780px; }
+    .timeline-item { position: relative; padding: 0 0 28px; }
+    .timeline-item:before { content: ""; position: absolute; width: 9px; height: 9px; border-radius: 50%; background: var(--gold); left: -33px; top: 9px; box-shadow: 0 0 0 5px rgba(215,181,109,.12); }
+    .timeline-item h3 { font: 22px Georgia, serif; margin: 0 0 5px; color: var(--gold-light); }
+    .timeline-item p { color: #b8c5d4; margin: 0; font-size: 14px; }
+    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 42px; }
+    .project { min-height: 250px; border-radius: 20px; overflow: hidden; padding: 28px; color: white; position: relative; background: linear-gradient(135deg, #10263e, #23445e); }
+    .project:nth-child(2) { background: linear-gradient(135deg, #20354a, #53616b); }
+    .project:after { content: ""; position: absolute; width: 240px; height: 240px; border: 1px solid rgba(240,217,159,.35); border-radius: 50%; right: -65px; bottom: -110px; box-shadow: 0 0 0 25px rgba(215,181,109,.06), 0 0 0 55px rgba(215,181,109,.04); }
+    .project span { color: var(--gold-light); font-size: 10px; text-transform: uppercase; letter-spacing: .18em; font-weight: 800; }
+    .project h3 { font: 27px Georgia, serif; max-width: 320px; margin: 14px 0 8px; }
+    .project p { color: #d0d9e2; font-size: 13px; max-width: 340px; }
+    .contact { background: #edf0f3; }
+    .contact-box { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; background: white; padding: 44px; border-radius: 24px; box-shadow: var(--shadow); margin-top: 38px; }
+    .contact-details { display: grid; gap: 18px; align-content: start; }
+    .contact-item { display: flex; gap: 13px; align-items: flex-start; }
+    .contact-item .icon-box { flex: 0 0 42px; width: 42px; height: 42px; }
+    .contact-item small { color: var(--muted); display: block; font-size: 10px; text-transform: uppercase; letter-spacing: .12em; }
+    .contact-item b { color: var(--navy); font-size: 14px; overflow-wrap: anywhere; }
+    .contact-note { color: var(--muted); font-size: 12px; margin-top: 10px; }
+    .contact-form { display: grid; gap: 12px; }
+    .contact-form label { font-size: 11px; font-weight: 800; color: #435267; }
+    .contact-form input, .contact-form textarea { width: 100%; border: 1px solid #dce2e8; background: #fbfcfd; border-radius: 10px; padding: 13px 14px; font: inherit; font-size: 13px; outline: none; margin-top: 5px; }
+    .contact-form input:focus, .contact-form textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(215,181,109,.15); }
+    .contact-form textarea { min-height: 105px; resize: vertical; }
+    .contact-form button { cursor: pointer; border: 0; justify-self: start; }
+    footer { background: #06111e; color: #aebbc9; padding: 28px 0; font-size: 11px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .footer-inner strong { color: white; letter-spacing: .12em; }
+    .gold-dot { color: var(--gold); }
+    @media (max-width: 850px) {
+      .nav-links { display: none; position: absolute; top: 72px; left: 20px; right: 20px; background: #10243a; border: 1px solid rgba(215,181,109,.2); border-radius: 14px; padding: 18px; flex-direction: column; align-items: stretch; gap: 15px; }
+      .nav-links.open { display: flex; }
+      .menu-btn { display: inline-block; }
+      .nav-cta { display: none; }
+      .hero-grid { grid-template-columns: 1fr; padding-top: 135px; padding-bottom: 55px; gap: 10px; }
+      .hero { min-height: auto; }
+      .visual-wrap { min-height: 390px; }
+      .blueprint { width: min(75%, 340px); }
+      .about-grid, .contact-box { grid-template-columns: 1fr; gap: 28px; }
+      .cards { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .container { width: min(100% - 30px, 1120px); }
+      section { padding: 72px 0; }
+      .hero-grid { min-height: auto; }
+      h1 { font-size: 49px; }
+      .hero-lead { font-size: 15px; }
+      .hero-meta { gap: 18px; margin-top: 35px; }
+      .visual-wrap { min-height: 330px; }
+      .blueprint { width: 74%; }
+      .float-card { right: -2px; bottom: 24px; width: 155px; padding: 13px; }
+      .cards, .skills-grid, .projects-grid { grid-template-columns: 1fr; }
+      .contact-box { padding: 25px; }
+      .about-panel { padding: 27px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Achinta Das home">
+        <span class="brand-mark">A</span>
+        <span>ACHINTA DAS<small>PERSONAL PORTFOLIO</small></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#services">Expertise</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="#contact">Let's Connect ↗</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Facade &amp; Estimation Professional</div>
+          <h1>Precision in<br><span>Every Detail.</span></h1>
+          <p class="hero-lead">I work across aluminium windows, doors and facade systems, bringing together estimation, material planning, technical coordination and practical project understanding.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#projects">Explore My Work <span>↗</span></a>
+            <a class="btn btn-outline" href="#contact">Contact Me</a>
+          </div>
+          <div class="hero-meta">
+            <div><strong>Facade</strong>Technical domain</div>
+            <div><strong>Estimation</strong>BOQ &amp; planning</div>
+            <div><strong>Coordination</strong>Project delivery</div>
+          </div>
+        </div>
+        <div class="visual-wrap" aria-label="Abstract architectural facade illustration">
+          <div class="blueprint">
+            <div class="blueprint-inner"><div class="tower"></div><span class="blueprint-label">ARCHITECTURAL SYSTEMS / DETAIL / PRECISION</span></div>
+          </div>
+          <div class="float-card"><b>Detail-led</b><span>Practical technical approach</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-panel">
+          <div class="section-kicker">A little about me</div>
+          <div class="mini-line"></div>
+          <h3>Technical thinking.<br>Practical execution.</h3>
+          <p>Focused on the details that connect drawings, materials, fabrication and site requirements.</p>
+        </div>
+        <div class="about-copy">
+          <div class="section-kicker">About Achinta</div>
+          <h2 class="section-title">A professional approach to facade and estimation.</h2>
+          <p>I am <strong>Achinta Das</strong>, a facade and estimation professional with domain experience in aluminium doors, windows and facade systems. My work and interests include quotation preparation, BOQ and material list development, cutting information, glass sizing and coordination between technical requirements and project execution.</p>
+          <p>This portfolio is a snapshot of my professional capabilities. It will continue to grow as I add project highlights, updated experience, certificates and work samples.</p>
+          <a class="text-link" href="#contact">Discuss a project <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-kicker">What I work with</div>
+        <h2 class="section-title">Core areas of expertise</h2>
+        <p class="section-intro">A practical combination of technical documentation, quantity understanding and coordination for aluminium and facade projects.</p>
+        <div class="cards">
+          <article class="card"><div class="icon-box">⌁</div><h3>Estimation &amp; BOQ</h3><p>Quotation preparation, quantity take-offs, BOQ review and cost-related documentation for project requirements.</p></article>
+          <article class="card"><div class="icon-box">▤</div><h3>Material Planning</h3><p>Material lists, cutting information, glass sizes and coordination of technical inputs for fabrication planning.</p></article>
+          <article class="card"><div class="icon-box">⌂</div><h3>Aluminium Systems</h3><p>Working knowledge of aluminium doors, windows, sliding and casement systems and facade-related applications.</p></article>
+          <article class="card"><div class="icon-box">⌗</div><h3>Technical Drawings</h3><p>Drawing interpretation, AutoCAD 2D and coordination of project details with production and site requirements.</p></article>
+          <article class="card"><div class="icon-box">◫</div><h3>Project Coordination</h3><p>Coordination across drawings, approvals, materials, production updates and installation progress.</p></article>
+          <article class="card"><div class="icon-box">▧</div><h3>Reporting &amp; Tracking</h3><p>Structured reporting and tracking using spreadsheets and digital tools to support project visibility.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-kicker">Tools &amp; domain knowledge</div>
+        <h2 class="section-title">Skills and technical exposure</h2>
+        <p class="section-intro">A selection of software tools and aluminium system knowledge relevant to estimation and facade project workflows.</p>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Software &amp; Tools</h3>
+            <div class="chips">
+              <span class="chip">AutoCAD 2D</span><span class="chip">Orgadata</span><span class="chip">Eva ERP</span><span class="chip">MS Office</span><span class="chip">Microsoft Power BI</span><span class="chip">Real Cut 1D</span><span class="chip">Real Cut 2D</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Systems &amp; Applications</h3>
+            <div class="chips">
+              <span class="chip">Domal 40</span><span class="chip">Reynaers</span><span class="chip">Aluk</span><span class="chip">Technal</span><span class="chip">Schüco</span><span class="chip">Aluminium Windows</span><span class="chip">Facade Systems</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" id="experience">
+      <div class="container">
+        <div class="section-kicker">Professional background</div>
+        <h2 class="section-title">Experience &amp; responsibilities</h2>
+        <p class="section-intro">Experience spanning estimation activities and project-side coordination in the aluminium and facade domain.</p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Estimation &amp; Project Coordination</h3>
+            <p>Quotation and estimation support, BOQ and material documentation, technical coordination, production planning inputs and site progress follow-up.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Quotation &amp; Technical Documentation</h3>
+            <p>Preparation and review of quotations, material lists, actual cutting lists and glass sizes for aluminium door and window works.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Continuous Technical Development</h3>
+            <p>Building practical capability across facade systems, digital reporting, estimation workflows and project tracking tools.</p>
+          </div>
+        </div>
+        <p style="color:#91a2b5;font-size:11px;margin-top:4px;">Note: Specific employer names, job titles and dates can be added after your final CV details are confirmed.</p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-kicker">Selected work</div>
+        <h2 class="section-title">Project portfolio</h2>
+        <p class="section-intro">Representative work categories. Specific project names, photographs and measurable outcomes can be added when approved for public display.</p>
+        <div class="projects-grid">
+          <article class="project"><span>01 / Estimation</span><h3>Window &amp; facade estimation</h3><p>Quotation support, BOQ preparation, material take-offs and technical scope review.</p></article>
+          <article class="project"><span>02 / Coordination</span><h3>Residential aluminium works</h3><p>Coordination of drawings, materials, fabrication progress and installation requirements.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-kicker">Get in touch</div>
+        <h2 class="section-title">Let's connect professionally.</h2>
+        <p class="section-intro">For professional opportunities, estimation support or project-related discussions, feel free to get in touch.</p>
+        <div class="contact-box">
+          <div class="contact-details">
+            <div class="contact-item"><div class="icon-box">✉</div><div><small>Email</small><b id="emailText">achinta@achintadas.com</b></div></div>
+            <div class="contact-item"><div class="icon-box">⌖</div><div><small>Location</small><b>India</b></div></div>
+            <div class="contact-item"><div class="icon-box">▣</div><div><small>Professional Focus</small><b>Facade · Estimation · Aluminium Systems</b></div></div>
+            <p class="contact-note">The email shown is your planned custom-domain address. Activate it with your domain and email provider before publishing this contact detail publicly.</p>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <label>Your name<input id="visitorName" type="text" placeholder="Enter your name" required></label>
+            <label>Your email<input id="visitorEmail" type="email" placeholder="name@example.com" required></label>
+            <label>Message<textarea id="visitorMessage" placeholder="How can I help?" required></textarea></label>
+            <button class="btn btn-gold" type="submit">Prepare Email <span>↗</span></button>
+            <p class="contact-note">This form opens your email application; it does not store or send messages through a website server.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div><strong>ACHINTA DAS</strong> <span class="gold-dot">●</span> Facade &amp; Estimation Professional</div>
+      <div>© <span id="year"></span> Achinta Das. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('visitorName').value.trim();
+      const email = document.getElementById('visitorEmail').value.trim();
+      const message = document.getElementById('visitorMessage').value.trim();
+      const subject = encodeURIComponent('Website enquiry from ' + name);
+      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
+      window.location.href = 'mailto:achinta@achintadas.com?subject=' + subject + '&body=' + body;
+    });
+  </script>
+</body>
+</html>
